@@ -16,8 +16,17 @@ describe('[Exercise 1] trimProperties', () => {
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
-  test.todo('[3] returns an object with the properties trimmed')
-  test.todo('[4] the object returned is the exact same one we passed in')
+  test('[3] returns an object with the properties trimmed', () => {
+    const input = {firstName: '  john', lastName: 'doe  '}
+    const expected = {firstName: 'john', lastName: 'doe'}
+    utils.trimPropertiesMutation(input)
+    expect(input).toEqual(expected)
+  })
+  test('[4] the object returned is the exact same one we passed in', () => {
+    const input = {firstName: '  john', lastName: 'doe  '}
+    const actual = utils.trimPropertiesMutation(input)
+    expect(actual).toBe(input)
+  })
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
